@@ -177,6 +177,18 @@ export function Cleaner() {
         ))}
       </div>
 
+      {/* Action buttons — always visible */}
+      <div className="cleaner-actions">
+        <Button appearance="primary" size="large" icon={scanning ? undefined : <Delete24Regular />} onClick={handleScan} disabled={scanning || cleaning}>
+          {scanning ? t('cleaner.scanning') : t('cleaner.scan')}
+        </Button>
+        {scanned && (
+          <Button appearance="primary" size="large" icon={cleaning ? undefined : <Checkmark24Regular />} onClick={handleClean} disabled={scanning || cleaning}>
+            {cleaning ? t('cleaner.cleaning') : t('cleaner.clean')}
+          </Button>
+        )}
+      </div>
+
       {/* Streaming scan results */}
       {(sections.length > 0 || scanning || cleaning) && (
         <div className="scan-results">
@@ -250,18 +262,6 @@ export function Cleaner() {
           <pre>{error}</pre>
         </div>
       )}
-
-      {/* Action buttons */}
-      <div className="cleaner-actions">
-        <Button appearance="primary" size="large" icon={scanning ? undefined : <Delete24Regular />} onClick={handleScan} disabled={scanning || cleaning}>
-          {scanning ? t('cleaner.scanning') : t('cleaner.scan')}
-        </Button>
-        {scanned && (
-          <Button appearance="primary" size="large" icon={cleaning ? undefined : <Checkmark24Regular />} onClick={handleClean} disabled={scanning || cleaning}>
-            {cleaning ? t('cleaner.cleaning') : t('cleaner.clean')}
-          </Button>
-        )}
-      </div>
     </div>
   );
 }
