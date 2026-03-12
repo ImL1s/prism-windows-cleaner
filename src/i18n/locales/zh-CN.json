@@ -77,7 +77,11 @@
     "dryRun": "预览 (Dry Run)",
     "startClean": "开始清理",
     "cleaning": "清理中...",
-    "scanning": "预览"
+    "scanning": "扫描中...",
+    "reclaimableSpace": "可回收空间",
+    "freedSpace": "已释放空间",
+    "artifacts": "产物数量",
+    "cleaned": "已清理"
   },
   "analyzer": {
     "title": "磁盘空间分析",

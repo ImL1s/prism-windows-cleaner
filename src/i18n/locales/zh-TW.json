@@ -77,7 +77,11 @@
     "dryRun": "預覽 (Dry Run)",
     "startClean": "開始清理",
     "cleaning": "清理中...",
-    "scanning": "預覽"
+    "scanning": "掃描中...",
+    "reclaimableSpace": "可回收空間",
+    "freedSpace": "已釋放空間",
+    "artifacts": "產物數量",
+    "cleaned": "已清理"
   },
   "analyzer": {
     "title": "磁碟空間分析",

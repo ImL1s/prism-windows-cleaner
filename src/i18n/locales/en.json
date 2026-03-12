@@ -77,7 +77,11 @@
     "dryRun": "Preview (Dry Run)",
     "startClean": "Start Cleaning",
     "cleaning": "Cleaning...",
-    "scanning": "Previewing"
+    "scanning": "Scanning...",
+    "reclaimableSpace": "Reclaimable Space",
+    "freedSpace": "Space Freed",
+    "artifacts": "Artifacts",
+    "cleaned": "Cleaned"
   },
   "analyzer": {
     "title": "Disk Space Analysis",
