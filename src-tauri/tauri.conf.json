@@ -38,7 +38,9 @@
       "icons/icon.ico"
     ],
     "resources": {
-      "../mole-core/bin": "mole-core/bin"
+      "../mole-core/bin": "mole-core/bin",
+      "../mole-core/lib": "mole-core/lib",
+      "../mole-core/mole.ps1": "mole-core/mole.ps1"
     }
   }
 }
