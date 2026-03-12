@@ -1,7 +1,13 @@
+.page.cleaner {
+  height: 100%;
+  min-height: 0;
+}
+
 .page-header {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+  flex-shrink: 0;
 }
 
 .page-desc {
@@ -15,6 +21,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-lg);
+  flex-shrink: 0;
 }
 
 .category-card {
@@ -61,7 +68,8 @@
   flex-direction: column;
   gap: var(--space-md);
   margin-top: var(--space-md);
-  max-height: 400px;
+  flex: 1;
+  min-height: 120px;
   overflow-y: auto;
   padding-right: 4px;
 }
@@ -230,6 +238,7 @@
   display: flex;
   gap: var(--space-lg);
   margin-top: var(--space-md);
+  flex-shrink: 0;
 }
 
 /* Animations */
