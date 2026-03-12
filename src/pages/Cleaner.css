@@ -61,7 +61,7 @@
   flex-direction: column;
   gap: var(--space-md);
   margin-top: var(--space-md);
-  max-height: 60vh;
+  max-height: 400px;
   overflow-y: auto;
   padding-right: 4px;
 }
