@@ -18,20 +18,20 @@ pub enum ScanEvent {
     Item { name: String, size: String, count: Option<u32> },
     #[serde(rename = "success")]
     Success { name: String },
-    #[serde(rename = "warning")]
-    Warning { name: String },
     #[serde(rename = "info")]
     Info { text: String },
-    #[serde(rename = "summary")]
-    Summary { total_size: String, item_count: u32, categories: u32 },
     #[serde(rename = "done")]
     Done { success: bool },
 }
 
+/// Static compiled regex for stripping ANSI escape codes
+static ANSI_RE: std::sync::LazyLock<Regex> = std::sync::LazyLock::new(|| {
+    Regex::new(r"\x1b\[[0-9;]*[a-zA-Z]").unwrap()
+});
+
 /// Strip ANSI escape codes from a string
 fn strip_ansi(s: &str) -> String {
-    let re = Regex::new(r"\x1b\[[0-9;]*[a-zA-Z]").unwrap();
-    re.replace_all(s, "").to_string()
+    ANSI_RE.replace_all(s, "").to_string()
 }
 
 /// Parse a single line of CLI output into a ScanEvent
@@ -93,7 +93,6 @@ fn parse_scan_line(line: &str) -> Option<ScanEvent> {
 
     // Summary lines
     if clean.starts_with("Potential space:") || clean.starts_with("Space freed:") {
-        let size = clean.split(':').nth(1).unwrap_or("").trim().to_string();
         return Some(ScanEvent::Info { text: format!("💾 {}", clean) });
     }
     if clean.starts_with("Items found:") || clean.starts_with("Items cleaned:") {

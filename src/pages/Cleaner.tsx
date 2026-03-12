@@ -34,9 +34,7 @@ type ScanEvent =
   | { type: 'section'; name: string }
   | { type: 'item'; name: string; size: string; count?: number }
   | { type: 'success'; name: string }
-  | { type: 'warning'; name: string }
   | { type: 'info'; text: string }
-  | { type: 'summary'; total_size: string; item_count: number; categories: number }
   | { type: 'done'; success: boolean };
 
 export function Cleaner() {
@@ -193,7 +191,7 @@ export function Cleaner() {
                   {section.name}
                 </span>
                 {section.items.length > 0 && (
-                  <span className="scan-section-count">{section.items.length} 項</span>
+                  <span className="scan-section-count">{t('cleaner.sectionItems', { count: section.items.length })}</span>
                 )}
               </div>
               {section.items.length > 0 && (
@@ -218,7 +216,7 @@ export function Cleaner() {
               <div className="scan-section-header">
                 <span className="scan-section-name">
                   <Spinner size="tiny" className="section-icon" />
-                  {scanning ? '掃描中…' : '清理中…'}
+                  {scanning ? t('cleaner.scanningProgress') : t('cleaner.cleaningProgress')}
                 </span>
               </div>
             </div>
@@ -232,15 +230,15 @@ export function Cleaner() {
           <div className="summary-grid">
             <div className="summary-stat main">
               <span className="summary-value">{stats.totalSize}</span>
-              <span className="summary-label">{cleaning ? '已釋放空間' : '可釋放空間'}</span>
+              <span className="summary-label">{cleaning ? t('cleaner.freedSpace') : t('cleaner.reclaimableSpace')}</span>
             </div>
             <div className="summary-stat">
               <span className="summary-value">{stats.totalItems}</span>
-              <span className="summary-label">項目</span>
+              <span className="summary-label">{t('cleaner.items')}</span>
             </div>
             <div className="summary-stat">
               <span className="summary-value">{stats.totalSections}</span>
-              <span className="summary-label">分類</span>
+              <span className="summary-label">{t('cleaner.categories')}</span>
             </div>
           </div>
         </div>

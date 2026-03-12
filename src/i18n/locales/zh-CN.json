@@ -46,7 +46,14 @@
     "scan": "扫描",
     "scanning": "扫描中...",
     "clean": "开始清理",
-    "cleaning": "清理中..."
+    "cleaning": "清理中...",
+    "scanningProgress": "扫描中…",
+    "cleaningProgress": "清理中…",
+    "reclaimableSpace": "可释放空间",
+    "freedSpace": "已释放空间",
+    "items": "项目",
+    "categories": "分类",
+    "sectionItems": "{{count}} 项"
   },
   "optimizer": {
     "title": "系统优化",

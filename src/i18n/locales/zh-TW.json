@@ -46,7 +46,14 @@
     "scan": "掃描",
     "scanning": "掃描中...",
     "clean": "開始清理",
-    "cleaning": "清理中..."
+    "cleaning": "清理中...",
+    "scanningProgress": "掃描中…",
+    "cleaningProgress": "清理中…",
+    "reclaimableSpace": "可釋放空間",
+    "freedSpace": "已釋放空間",
+    "items": "項目",
+    "categories": "分類",
+    "sectionItems": "{{count}} 項"
   },
   "optimizer": {
     "title": "系統優化",

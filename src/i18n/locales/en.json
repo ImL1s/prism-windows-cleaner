@@ -46,7 +46,14 @@
     "scan": "Scan",
     "scanning": "Scanning...",
     "clean": "Start Cleaning",
-    "cleaning": "Cleaning..."
+    "cleaning": "Cleaning...",
+    "scanningProgress": "Scanning…",
+    "cleaningProgress": "Cleaning…",
+    "reclaimableSpace": "Reclaimable Space",
+    "freedSpace": "Space Freed",
+    "items": "Items",
+    "categories": "Categories",
+    "sectionItems": "{{count}} items"
   },
   "optimizer": {
     "title": "System Optimization",
