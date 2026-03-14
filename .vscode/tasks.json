@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "tauri-dev-build",
+      "type": "shell",
+      "command": "cargo build",
+      "options": {
+        "cwd": "${workspaceFolder}/src-tauri"
+      },
+      "group": "build",
+      "problemMatcher": ["$rustc"]
+    },
+    {
+      "label": "tauri-release-build",
+      "type": "shell",
+      "command": "npm run tauri build",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}
